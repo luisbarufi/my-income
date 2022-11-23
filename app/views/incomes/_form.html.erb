@@ -1,37 +1,42 @@
 <%= form_with(model: income, class: "contents") do |form| %>
-  <% if income.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(income.errors.count, "error") %> prohibited this income from being saved:</h2>
+  <div class="shadow-sm sm:rounded-md sm:overflow-hidden">
+    <div class="p-5 bg-white space-y-6">
 
-      <ul>
-        <% income.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+      <% if income.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(income.errors.count, "error") %> prohibited this income from being saved:</h2>
+
+          <ul>
+            <% income.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="my-5">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full" %>
+      </div>
+
+      <div class="my-5">
+        <%= form.label :payday %>
+        <%= form.date_field :payday, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full" %>
+      </div>
+
+      <div class="my-5">
+        <%= form.label :description %>
+        <%= form.text_field :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full" %>
+      </div>
+
+      <div class="my-5">
+        <%= form.label :amount %>
+        <%= form.text_field :amount, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full" %>
+      </div>
+
     </div>
-  <% end %>
-
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :payday %>
-    <%= form.date_field :payday, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_field :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :amount %>
-    <%= form.text_field :amount, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+      <%= form.submit class: 'inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-400 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %>
+    </div>
   </div>
 <% end %>

@@ -1,3 +1,20 @@
+<%= render 'shared/breadcrumb', links: [
+  ['Início', root_path],
+  ['Incomes', incomes_path],
+] %>
+
+<h3 class="text-gray-700 text-3xl mb-2 font-medium">Income</h3>
+
+<div class="shadow-sm sm:rounded-md sm:overflow-hidden">
+  <div class="p-4 bg-white space-y-6">
+    <p><strong>Name:</strong><br><%= @income.name %></p>
+    <p><strong>Payday:</strong><br><%= @income.payday %></p>
+    <p><strong>Description:</strong><br><%= @income.description %></p>
+    <p><strong>Amount:</strong><br><%= @income.amount %></p>
+  </div>
+</div>
+
+<!--
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
     <% if notice.present? %>
@@ -6,10 +23,11 @@
 
     <%= render @income %>
 
-    <%= link_to 'Edit this income', edit_income_path(@income), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%#= link_to 'Edit this income', edit_income_path(@income), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
-      <%= button_to 'Destroy this income', income_path(@income), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%#= button_to 'Destroy this income', income_path(@income), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
-    <%= link_to 'Back to incomes', incomes_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%#= link_to 'Back to incomes', incomes_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
+-->

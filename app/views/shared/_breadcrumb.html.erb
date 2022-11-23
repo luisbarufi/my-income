@@ -1,0 +1,16 @@
+<% provide :breadcrumb do %>
+  <nav class="rounded-md w-full -mt-4 mb-2 py-2 text-sm">
+    <ol class="list-reset flex">
+      <% links.each do |link| %>
+        <% if link.second.present? %>
+          <li class= "text-blue-600 hover:text-blue-700">
+            <%= link_to link.first, link.second, class: 'text-blue-600 hover:text-blue-700' %>
+          </li>
+        <% else %>
+          <li class= "text-gray-500"><%= link.first %></li>
+        <% end %>
+        <%= content_tag(:li, content_tag(:span, '/', class: 'text-gray-500 mx-2')) unless link == links.last %>
+      <% end %>
+    </ol>
+  </nav>
+<% end %>
