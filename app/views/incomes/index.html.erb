@@ -36,7 +36,7 @@
 
             <tbody class="bg-white divide-y divide-gray-200">
               <% @incomes.each do |income| %>
-                <tr>
+                <tr id="<%= dom_id income %>">
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= income.name %></td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= income.payday %></td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= income.description %></td>
