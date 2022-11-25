@@ -1,0 +1,10 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation" class="rounded bg-red-400 text-white p-4">
+    <h2 class="text-lg font-semibold">Oops!</h2>
+    <ul class="<%= 'list-disc list-inside' if resource.errors.count > 1 %>">
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
