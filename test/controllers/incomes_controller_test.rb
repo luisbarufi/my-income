@@ -51,6 +51,12 @@ class IncomesControllerTest < ActionDispatch::IntegrationTest
   test 'should get edit' do
     get edit_income_url(@income)
     assert_response :success
+    assert_select 'h3.text-gray-700', minimum: 1
+    assert_select 'h3', 'Editing income'
+    assert_select 'div.my-5', minimum: 4
+    assert_select 'div.p-5', minimum: 1
+    assert_select 'div.px-4', minimum: 1
+    assert_select 'input.inline-flex', minimum: 1
   end
 
   test 'should update income' do
