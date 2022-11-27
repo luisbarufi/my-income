@@ -21,6 +21,12 @@ class IncomesControllerTest < ActionDispatch::IntegrationTest
   test 'should get new' do
     get new_income_url
     assert_response :success
+    assert_select 'h3.text-gray-700', minimum: 1
+    assert_select 'h3', 'New income'
+    assert_select 'div.my-5', minimum: 4
+    assert_select 'div.p-5', minimum: 1
+    assert_select 'div.px-4', minimum: 1
+    assert_select 'input.inline-flex', minimum: 1
   end
 
   test 'should create income' do
