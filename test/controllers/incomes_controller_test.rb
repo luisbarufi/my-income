@@ -11,6 +11,11 @@ class IncomesControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get incomes_url
     assert_response :success
+    assert_select 'h3', 'Incomes'
+    assert_select 'div.shadow-sm', minimum: 1
+    assert_select 'tr', minimum: 1
+    assert_select 'td', minimum: 5
+    assert_select '.px-6', /\$[,\d]+\.\d\d/
   end
 
   test 'should get new' do
