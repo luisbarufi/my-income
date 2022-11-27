@@ -39,8 +39,8 @@
                 <tr id="<%= dom_id income %>">
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= income.name %></td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= income.payday %></td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= income.description %></td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= income.amount %></td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= sanitize(income.description) %></td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= number_to_currency(income.amount) %></td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
                     <div class="inline-block">
                       <%= link_to income, class: 'text-indigo-600', title: 'Show' do %>
