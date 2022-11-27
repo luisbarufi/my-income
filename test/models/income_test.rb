@@ -3,6 +3,8 @@
 require 'test_helper'
 
 class IncomeTest < ActiveSupport::TestCase
+  fixtures :incomes
+
   test 'Income attributes must not be empty' do
     income = Income.new
     assert income.invalid?
