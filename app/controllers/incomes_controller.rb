@@ -28,7 +28,6 @@ class IncomesController < ApplicationController
         format.html { redirect_to income_url(@income), notice: 'Income was successfully created.' }
         format.json { render :show, status: :created, location: @income }
       else
-        puts @income.errors.full_messages
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @income.errors, status: :unprocessable_entity }
       end
