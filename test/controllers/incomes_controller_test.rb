@@ -49,6 +49,7 @@ class IncomesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should show income' do
     get income_url(@income)
+    assert_select 'h3.text-gray-700', minimum: 1
     assert_response :success
     assert_select 'div.shadow-sm', minimum: 1
     assert_select 'h3', 'Income'
