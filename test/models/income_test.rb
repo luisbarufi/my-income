@@ -1,5 +1,17 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: incomes
+#
+#  id          :bigint           not null, primary key
+#  amount      :decimal(8, 2)
+#  description :string
+#  name        :string
+#  payday      :date
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 require 'test_helper'
 
 class IncomeTest < ActiveSupport::TestCase
