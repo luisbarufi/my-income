@@ -41,19 +41,19 @@ pt-BR:
     models:
       income:
         one: Renda
-        other: Renda
+        other: Rendas
 
     attributes:
       attribute_commons: &commons
-        amount: Quantidade
         created_at: Data de criação
         description: Descrição
         name: Nome
-        payday: Dia do Pagamento
         updated_at: Editado em
 
       income:
         <<: *commons
+        amount: Valor
+        payday: Dia do Pagamento
 
   form:
     button:
@@ -61,3 +61,5 @@ pt-BR:
       cancel: Cancelar
       create: Salvar
       save: Salvar
+
+  app_name: Minha Renda

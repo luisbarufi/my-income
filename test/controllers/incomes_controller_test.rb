@@ -12,7 +12,7 @@ class IncomesControllerTest < ActionDispatch::IntegrationTest
     get incomes_url
     assert_response :success
     assert_select 'h3.text-gray-700', minimum: 1
-    assert_select 'h3', 'Incomes'
+    assert_select 'h3', I18n.t('activerecord.models.income.other')
     assert_select 'div.shadow-sm', minimum: 1
     assert_select 'div.p-0', minimum: 1
     assert_select 'div.-mb-2', minimum: 1
