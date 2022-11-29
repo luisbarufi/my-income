@@ -23,7 +23,7 @@ class IncomesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'tr', minimum: 1
     assert_select 'th', minimum: 5
     assert_select 'td', minimum: 5
-    assert_select '.px-6', /\$[,\d]+\.\d\d/
+    assert_select '.px-6', /[^\d\-.]/ # regex that converts values to decimal numbers
   end
 
   test 'should get new' do
@@ -54,7 +54,7 @@ class IncomesControllerTest < ActionDispatch::IntegrationTest
     assert_select 'div.shadow-sm', minimum: 1
     assert_select 'h3', 'Income'
     assert_select 'p', minimum: 4
-    assert_select 'p', /\$[,\d]+\.\d\d/
+    assert_select 'p', /[^\d\-.]/ # regex that converts values to decimal numbers
   end
 
   test 'should get edit' do
