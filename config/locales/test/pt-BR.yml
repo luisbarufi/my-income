@@ -1,0 +1,5 @@
+pt-BR:
+  test:
+    errors:
+      messages:
+        must_be_greater_than_or_equal_to: deve ser maior ou igual a %{count}
