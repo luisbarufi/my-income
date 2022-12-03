@@ -61,5 +61,12 @@ pt-BR:
       cancel: Cancelar
       create: Salvar
       save: Salvar
+      create: "Criar %{model}"
+      update: "Atualizar %{model}"
+    messages:
+      successfully_created: Criado(a) com sucesso.
+      successfully_updated: Atualizado(a) com sucesso.
+      successfully_destroyed: Deletado(a) com sucesso.
+      are_you_sure: Tem certeza?
 
   app_name: Minha Renda

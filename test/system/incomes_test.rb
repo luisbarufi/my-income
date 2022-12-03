@@ -7,41 +7,44 @@ class IncomesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit incomes_url
-    assert_selector "h1", text: "Incomes"
+    assert_selector "h3", text: I18n.t('activerecord.models.income.other')
   end
 
   test "should create income" do
     visit incomes_url
-    click_on "New income"
+    click_on I18n.t('crud.action.new')
 
-    fill_in "Amount", with: @income.amount
-    fill_in "Description", with: @income.description
-    fill_in "Name", with: @income.name
-    fill_in "Payday", with: @income.payday
-    click_on "Create Income"
+    fill_in I18n.t('activerecord.attributes.income.amount'), with: @income.amount
+    fill_in I18n.t('activerecord.attributes.income.description'), with: @income.description
+    fill_in I18n.t('activerecord.attributes.income.name'), with: @income.name
+    fill_in I18n.t('activerecord.attributes.income.payday'), with: @income.payday
+    click_on I18n.t('form.button.create', model: I18n.t('activerecord.models.income.one'))
 
-    assert_text "Income was successfully created"
-    click_on "Back"
+    assert_text I18n.t('form.messages.successfully_created')
+    click_on I18n.t('activerecord.models.income.other')
   end
 
   test "should update Income" do
-    visit income_url(@income)
-    click_on "Edit this income", match: :first
+    visit incomes_url
+    click_on I18n.t('crud.action.edit'), match: :first
 
-    fill_in "Amount", with: @income.amount
-    fill_in "Description", with: @income.description
-    fill_in "Name", with: @income.name
-    fill_in "Payday", with: @income.payday
-    click_on "Update Income"
+    fill_in I18n.t('activerecord.attributes.income.amount'), with: @income.amount
+    fill_in I18n.t('activerecord.attributes.income.description'), with: @income.description
+    fill_in I18n.t('activerecord.attributes.income.name'), with: @income.name
+    fill_in I18n.t('activerecord.attributes.income.payday'), with: @income.payday
+    click_on I18n.t('form.button.update', model: I18n.t('activerecord.models.income.one'))
 
-    assert_text "Income was successfully updated"
-    click_on "Back"
+    assert_text I18n.t('form.messages.successfully_updated')
+    click_on I18n.t('activerecord.models.income.other')
   end
 
   test "should destroy Income" do
-    visit income_url(@income)
-    click_on "Destroy this income", match: :first
+    visit incomes_url
 
-    assert_text "Income was successfully destroyed"
+    page.accept_confirm do
+      click_on I18n.t('crud.action.destroy'), match: :first
+    end
+
+    assert_text I18n.t('form.messages.successfully_destroyed')
   end
 end

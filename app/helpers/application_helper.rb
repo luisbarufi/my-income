@@ -41,7 +41,7 @@ module ApplicationHelper
   end
 
   def btn_destroy bth_path
-    button_to bth_path, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'text-indigo-600', title: t('crud.action.destroy') do
+    button_to bth_path, method: :delete, data: { turbo_confirm: t('form.messages.are_you_sure') }, class: 'text-indigo-600', title: t('crud.action.destroy') do
       "<svg class='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path
           stroke-linecap='round'
