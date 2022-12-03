@@ -5,6 +5,10 @@
 
 <h3 class="text-gray-700 text-3xl mb-2 font-medium">Income</h3>
 
+<% if notice.present? %>
+  <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+<% end %>
+
 <div class="shadow-sm sm:rounded-md sm:overflow-hidden">
   <div class="p-4 bg-white space-y-6">
     <p><strong>Name:</strong><br><%= @income.name %></p>
